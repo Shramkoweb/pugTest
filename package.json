@@ -1,0 +1,50 @@
+{
+  "name": "kit",
+  "version": "1.0.0",
+  "description": "Start project.",
+  "scripts": {
+    "bemlint": "bemlint build/*.html --mod='--'",
+    "puglint": "glob-exec \"src/**/*.pug\" -- \"pug-lint {{files.join(' ')}}\"",
+    "stylelint": "stylelint \"src/scss/**/*.scss\" --syntax=scss",
+    "start": "gulp",
+    "lint-staged": "lint-staged"
+  },
+  "author": "Sergey Shramko",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Shramkoweb"
+  },
+  "lint-staged": {
+    "*.{js,pug,md}": "editorconfig-cli",
+    "*.pug": "pug-lint",
+    "*.scss": "stylelint --syntax=scss"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "@htmlacademy/editorconfig-cli": "^1.0.0",
+    "autoprefixer": "^9.0.2",
+    "bemlint": "^1.6.1",
+    "browser-sync": "^2.14.0",
+    "del": "^4.0.0",
+    "glob-exec": "^0.1.1",
+    "gulp": "^4.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-notify": "^3.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-pretty-html": "^2.0.9",
+    "gulp-pug": "^4.0.1",
+    "gulp-replace": "^1.0.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-uglify": "^3.0.1",
+    "lint-staged": "^8.1.5",
+    "pug-lint": "^2.5.0",
+    "stylelint": "^9.10.1",
+    "stylelint-order": "^2.1.0",
+    "stylelint-selector-bem-pattern": "^2.0.0"
+  }
+}

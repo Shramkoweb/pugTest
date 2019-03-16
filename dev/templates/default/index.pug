@@ -1,0 +1,23 @@
+//- Стандартный шаблон страницы
+include mixins.pug
+
+doctype html
+html(class='page', lang='ru')
+
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible' content='ie=edge')
+
+    block meta
+      title Главная
+
+    block head
+      link(rel='stylesheet', href='css/style.css')
+
+  body
+    .page__inner
+      .page__content
+
+        block content
+          p Cодержимое
