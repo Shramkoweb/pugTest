@@ -1,4 +1,6 @@
 extends ../../templates/default/index.pug
+include ../../templates/default/mixins.pug
+
 
 block meta
   title Button
@@ -7,5 +9,5 @@ block head
   link(rel='stylesheet', href='button.css')
 
 block content
-  button(class='button' type='button') Normal
-  button(class='button button--accent' type='button') Accent
+  +btn('', 'Normal')
+  +btn('accent', 'Accent')

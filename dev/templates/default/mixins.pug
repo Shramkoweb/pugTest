@@ -1,1 +1,6 @@
 //- Примеси
+mixin btn(type, text)
+  if type != ''
+    button.button(class=`button--${type}`)= text
+  else
+    button.button= text
