@@ -1,0 +1,12 @@
+extends ../../templates/default/index.pug
+include ../../templates/default/mixins.pug
+
+block meta
+  title Document-list
+
+block head
+  link(rel='stylesheet', href='document-list.css')
+
+block content
+  +list('name_of_document', '08/08/2014')
+

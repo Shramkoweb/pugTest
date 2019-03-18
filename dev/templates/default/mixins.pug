@@ -4,3 +4,27 @@ mixin btn(type, text)
     button.button(class=`button--${type}`)= text
   else
     button.button= text
+
+mixin list(name, date)
+  .document
+    ul.document__list
+      li.document__item
+        .document__info
+          img.document__image(src="../../components/document-list/list.jpg", alt="Document image")
+          h2.document__title= name
+          p.document__text= date
+        +btn('accent', 'Viev Document')
+      li.document__item
+        .document__info
+          img.document__image(src="../../components/document-list/list.jpg", alt="Document image")
+          h2.document__title= name
+          p.document__text= date
+        +btn('accent', 'Viev Document')
+      li.document__item
+        .document__info
+          img.document__image(src="../../components/document-list/list.jpg", alt="Document image")
+          h2.document__title= name
+          p.document__text= date
+        +btn('accent', 'Viev Document')
+
+
