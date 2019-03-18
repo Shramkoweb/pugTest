@@ -1,0 +1,32 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+
+  outline: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family: $font-family;
+}
+
+.document-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: scroll;
+
+  .document {
+    flex-grow: 1;
+    flex-shrink: 0;
+    max-width: 470px;
+  }
+}
