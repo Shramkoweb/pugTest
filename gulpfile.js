@@ -13,11 +13,7 @@ const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const browserSync = require('browser-sync').create();
 const del = require('del');
-const babel = require('gulp-babel');
-const uglify = require('gulp-uglify');
-const concat = require('gulp-concat');
 const pug = require('gulp-pug');
-const prettyHtml = require('gulp-pretty-html');
 const replace = require('gulp-replace');
 
 function compilePug() {
