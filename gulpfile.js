@@ -29,12 +29,6 @@ function compilePug() {
       }
     }))
     .pipe(pug())
-    .pipe(prettyHtml({
-      indent_size: 2,
-      indent_char: ' ',
-      unformatted: ['code', 'em', 'strong', 'span', 'i', 'b', 'br',],
-      content_unformatted: [],
-    }))
     .pipe(replace(/^(\s*)(<button.+?>)(.*)(<\/button>)/gm, '$1$2\n$1  $3\n$1$4'))
     .pipe(replace(/^( *)(<.+?>)(<script>)([\s\S]*)(<\/script>)/gm, '$1$2\n$1$3\n$4\n$1$5\n'))
     .pipe(replace(/^( *)(<.+?>)(<script\s+src.+>)(?:[\s\S]*)(<\/script>)/gm, '$1$2\n$1$3$4'))
@@ -50,7 +44,7 @@ function compileStylesComponents() {
         this.emit('end');
       }
     }))
-    .pipe(sass())
+    .pipe(sass({outputStyle: 'compressed'}))
     .pipe(postcss([
       autoprefixer({ browsers: ['last 2 version'] }),
     ]))
@@ -68,7 +62,7 @@ function compileStyles() {
       }
     }))
     .pipe(sourcemaps.init())
-    .pipe(sass())
+    .pipe(sass({outputStyle: 'compressed'}))
     .pipe(postcss([
       autoprefixer({ browsers: ['last 2 version'] }),
     ]))
@@ -87,12 +81,6 @@ function compilePugIndex() {
       }
     }))
     .pipe(pug())
-    .pipe(prettyHtml({
-      indent_size: 2,
-      indent_char: ' ',
-      unformatted: ['code', 'em', 'strong', 'span', 'i', 'b', 'br',],
-      content_unformatted: [],
-    }))
     .pipe(replace(/^(\s*)(<button.+?>)(.*)(<\/button>)/gm, '$1$2\n$1  $3\n$1$4'))
     .pipe(replace(/^( *)(<.+?>)(<script>)([\s\S]*)(<\/script>)/gm, '$1$2\n$1$3\n$4\n$1$5\n'))
     .pipe(replace(/^( *)(<.+?>)(<script\s+src.+>)(?:[\s\S]*)(<\/script>)/gm, '$1$2\n$1$3$4'))
