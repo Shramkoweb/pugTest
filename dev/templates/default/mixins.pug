@@ -10,21 +10,24 @@ mixin list(name, date)
     ul.document__list
       li.document__item
         .document__info
-          img.document__image(src="../../components/document-list/list.jpg", alt="Document image")
+          .document__image-wrapper
+            img.document__image(src="../../components/document-list/list.jpg", alt="Document image")
           h2.document__title= name
-          p.document__text= date
+          p.document__text= `Last edited: ${date}`
         +btn('accent', 'Viev Document')
       li.document__item
         .document__info
-          img.document__image(src="../../components/document-list/list.jpg", alt="Document image")
+          .document__image-wrapper
+            img.document__image(src="../../components/document-list/list.jpg", alt="Document image")
           h2.document__title= name
-          p.document__text= date
+          p.document__text= `Last edited: ${date}`
         +btn('accent', 'Viev Document')
       li.document__item
         .document__info
-          img.document__image(src="../../components/document-list/list.jpg", alt="Document image")
+          .document__image-wrapper
+            img.document__image(src="../../components/document-list/list.jpg", alt="Document image")
           h2.document__title= name
-          p.document__text= date
+          p.document__text= `Last edited: ${date}`
         +btn('accent', 'Viev Document')
 
 
