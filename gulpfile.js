@@ -105,6 +105,12 @@ function clean() {
 }
 exports.clean = clean;
 
+function copyImages() {
+  return src(dir.src + 'components/**/*.{jpg,jpeg,png,svg,webp,gif}')
+    .pipe(dest(dir.build + '/components/'));
+}
+exports.copyImages = copyImages;
+
 function serve() {
   browserSync.init({
     server: dir.build,
@@ -134,6 +140,6 @@ function serve() {
 
 exports.default = series(
   clean,
-  parallel(compileStyles, compileStylesComponents, compilePug, compilePugIndex),
+  parallel(compileStyles, compileStylesComponents, compilePug, compilePugIndex,copyImages),
   serve
 );
