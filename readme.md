@@ -1,4 +1,4 @@
-# Repo for testing pug & bem componenst
+# Repo for testing pug & bem components
 
 ```bash
 npm i             # установить зависимости
